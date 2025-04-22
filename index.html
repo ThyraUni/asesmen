@@ -153,7 +153,7 @@
         </section>
     </div>
     <!-- lagu start -->
-     <audio src="https://assets.satumomen.com/musics/akon-be-with-you.mp3" id="lagu"></audio>
+     <audio src="https://assets.satumomen.com/musics/akon-be-with-you.mp3" id="lagu" ></audio>
     <!-- lagu end -->
 </body>
 <script>
@@ -163,14 +163,17 @@
 
     tombol.addEventListener("click", function(){
         konten.classList.toggle("hidden");
-        musik.play();
+        
 
         if(tombol.innerText === "Open Invitation"){
             tombol.innerText = "Close Invitation";
+            musik.play();
         }
 
         else {
             tombol.innerText = "Open Invitation";
+            musik.pause();
+            musik.currentTime = 0;
         }
     })
 
